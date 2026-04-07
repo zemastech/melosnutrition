@@ -57,7 +57,7 @@ export default function ServicePage({ params }: { params: Promise<{ id: string }
 
             <div className="flex flex-wrap items-center gap-8 pt-8">
               <a 
-                href="https://t.me/nutripathet" 
+                href="https://t.me/meloset" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-primary text-white px-10 py-5 rounded-full font-bold flex items-center gap-2 hover:bg-black transition-all group"

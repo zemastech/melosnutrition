@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Activity,
   Instagram,
@@ -52,7 +53,7 @@ export const Footer = () => (
             </div>
             <div className="flex gap-4">
               <Mail className="w-6 h-6 text-primary shrink-0" />
-              <p className="text-sm text-gray-600">nutripathet@gmail.com</p>
+              <p className="text-sm text-gray-600">Meloset@gmail.com</p>
             </div>
           </div>
           <div className="space-y-6">
@@ -60,22 +61,22 @@ export const Footer = () => (
               <Clock className="w-6 h-6 text-primary shrink-0" />
               <div className="text-sm text-gray-600">
                 <p className="font-bold text-black mb-1">Office Hours</p>
-                <p>Mon – Fri: 8:30 AM – 6:30 PM</p>
-                <p>Sat: 9:00 AM – 2:00 PM</p>
+                <p>Mon â€“ Fri: 8:30 AM â€“ 6:30 PM</p>
+                <p>Sat: 9:00 AM â€“ 2:00 PM</p>
                 <p>Sun: Closed</p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="flex gap-3">
                 <a
-                  href="https://instagram.com/nutripathet"
+                  href="https://instagram.com/Meloset"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Instagram className="w-5 h-5 cursor-pointer hover:text-primary transition-colors" />
                 </a>
                 <a
-                  href="https://t.me/nutripathet"
+                  href="https://t.me/Meloset"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -88,12 +89,12 @@ export const Footer = () => (
                 >
                   <MessageCircle className="w-5 h-5 cursor-pointer hover:text-primary transition-colors" />
                 </a>
-                <a href="mailto:nutripathet@gmail.com">
+                <a href="mailto:Meloset@gmail.com">
                   <Mail className="w-5 h-5 cursor-pointer hover:text-primary transition-colors" />
                 </a>
               </div>
               <span className="text-xs font-bold uppercase tracking-widest">
-                @nutripathet
+                @Meloset
               </span>
             </div>
           </div>
@@ -102,10 +103,10 @@ export const Footer = () => (
 
       <div className="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-accent gap-8">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-            <Activity className="text-white w-4 h-4" />
+          <div className="w-6 h-6 flex items-center justify-center">
+            <Image src="/melos_logo.png" alt="Melos Logo" width={24} height={24} className="w-full h-full object-contain" />
           </div>
-          <span className="font-bold text-lg">Nutripath</span>
+          <span className="font-bold text-lg">Melos</span>
         </div>
         <div className="flex flex-wrap justify-center gap-6 text-xs font-bold uppercase tracking-widest">
           <a href="#" className="hover:text-primary transition-colors">
@@ -135,7 +136,7 @@ export const Footer = () => (
             Terms & Conditions
           </a>
         </div>
-        <p>© 2026 Nutripath. All Right Reserved.</p>
+        <p>Â© 2026 Melos. All Right Reserved.</p>
         <div className="flex gap-4">
           <Instagram className="w-4 h-4" />
           <Send className="w-4 h-4" />

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -35,7 +35,7 @@ export const Booking = () => (
         <p className="opacity-70 mb-12 max-w-md">Take the first step towards a healthier you. Secure your spot now to get your personalized nutrition plan.</p>
         <div className="flex flex-wrap items-center gap-8">
           <a 
-            href="https://t.me/nutripathet" 
+            href="https://t.me/Meloset" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-white text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-accent transition-all group"

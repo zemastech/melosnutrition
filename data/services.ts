@@ -1,4 +1,4 @@
-import { ServicePackage } from "../types";
+﻿import { ServicePackage } from "../types";
 
 export const servicePackages: ServicePackage[] = [
   {
@@ -51,7 +51,7 @@ export const servicePackages: ServicePackage[] = [
   },
   {
     id: "diabetes-blood-pressure",
-    title: "Diabetes & Blood Pressure–Aware Meal Plan",
+    title: "Diabetes & Blood Pressureâ€“Aware Meal Plan",
     shortDesc: "Using 'Food as Medicine' to manage and stabilize chronic health conditions.",
     fullDesc: "Manage your blood sugar and blood pressure naturally through strategic dietary interventions. This plan focuses on low-glycemic index foods and heart-healthy fats to reduce reliance on medication where possible.",
     whoItIsFor: "Individuals with Type 2 Diabetes, Prediabetes, Hypertension, or those with a family history of these conditions.",

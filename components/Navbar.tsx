@@ -1,7 +1,8 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Activity, Menu, X, ArrowUpRight, Instagram, Send, MessageCircle, Mail } from "lucide-react";
@@ -28,10 +29,9 @@ export const Navbar = () => {
         isScrolled ? "bg-white/20 backdrop-blur-xl border border-white/30" : "bg-white/10 backdrop-blur-md border border-white/10"
       }`}>
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-            <Activity className="text-white w-5 h-5" />
+          <div className="h-15 flex items-center justify-center">
+            <Image src="/melos_logo.png" alt="Melos Logo" width={32} height={32} className="w-full h-full object-" />
           </div>
-          <span className={`font-semibold text-xl tracking-tight ${textColor} drop-shadow-sm font-serif`}>Nutripath</span>
         </Link>
         
         {/* Desktop Menu */}
@@ -44,7 +44,7 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="https://t.me/nutripathet" target="_blank" rel="noopener noreferrer" className={`hidden sm:flex ${isHome && !isScrolled ? "bg-white text-black" : "bg-black text-white"} px-5 py-2 rounded-full text-sm font-medium items-center gap-2 hover:bg-primary hover:text-white transition-all`}>
+          <a href="https://t.me/Meloset" target="_blank" rel="noopener noreferrer" className={`hidden sm:flex ${isHome && !isScrolled ? "bg-white text-black" : "bg-black text-white"} px-5 py-2 rounded-full text-sm font-medium items-center gap-2 hover:bg-primary hover:text-white transition-all`}>
             Book Now <ArrowUpRight className="w-4 h-4" />
           </a>
           
@@ -69,10 +69,10 @@ export const Navbar = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <span className="font-bold text-lg tracking-tight text-black flex items-center gap-2">
-            <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-              <Activity className="text-white w-4 h-4" />
+            <div className="w-6 h-6 flex items-center justify-center">
+              <Image src="/melos_logo.png" alt="Melos Logo" width={24} height={24} className="w-full h-full object-contain" />
             </div>
-            Nutripath
+            Melos
           </span>
           <button 
             onClick={() => setIsMobileMenuOpen(false)}
@@ -103,7 +103,7 @@ export const Navbar = () => {
         {/* Secondary Section */}
         <div className="flex flex-col gap-8">
           <a 
-            href="https://t.me/nutripathet"
+            href="https://t.me/Meloset"
             target="_blank" 
             rel="noopener noreferrer"
             className="text-left text-xl font-medium text-black flex items-center gap-2 hover:text-primary transition-colors"
@@ -115,10 +115,10 @@ export const Navbar = () => {
           <div className="space-y-4">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Social</span>
             <div className="flex gap-5">
-              <a href="https://instagram.com/nutripathet" target="_blank" rel="noopener noreferrer"><Instagram className="w-5 h-5 text-black/80 hover:text-primary transition-colors cursor-pointer" /></a>
-              <a href="https://t.me/nutripathet" target="_blank" rel="noopener noreferrer"><Send className="w-5 h-5 text-black/80 hover:text-primary transition-colors cursor-pointer" /></a>
+              <a href="https://instagram.com/Meloset" target="_blank" rel="noopener noreferrer"><Instagram className="w-5 h-5 text-black/80 hover:text-primary transition-colors cursor-pointer" /></a>
+              <a href="https://t.me/Meloset" target="_blank" rel="noopener noreferrer"><Send className="w-5 h-5 text-black/80 hover:text-primary transition-colors cursor-pointer" /></a>
               <a href="https://wa.me/251994183411" target="_blank" rel="noopener noreferrer"><MessageCircle className="w-5 h-5 text-black/80 hover:text-primary transition-colors cursor-pointer" /></a>
-              <a href="mailto:nutripathet@gmail.com"><Mail className="w-5 h-5 text-black/80 hover:text-primary transition-colors cursor-pointer" /></a>
+              <a href="mailto:Meloset@gmail.com"><Mail className="w-5 h-5 text-black/80 hover:text-primary transition-colors cursor-pointer" /></a>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Salad, FlaskConical, Scale, Activity } from "lucide-react";
@@ -16,7 +16,7 @@ export const About = () => (
       transition={{ duration: 0.8 }}
       className="text-center mb-16"
     >
-      <span className="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 block">About Nutripath</span>
+      <span className="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 block">About Melos</span>
       <h2 className="text-3xl md:text-5xl font-semibold leading-tight max-w-4xl mx-auto">
         We offer a <span className="text-primary italic">scientific approach</span> to nutrition for all health goals, with advanced testing and clinical expertise. Whether for recovery or growth, a healthier life starts here.
       </h2>

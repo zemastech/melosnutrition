@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { ArrowUpRight, Instagram, Send } from "lucide-react";
@@ -57,7 +57,7 @@ export const Hero = () => (
           </div>
         </div>
         <a 
-          href="https://t.me/nutripathet" 
+          href="https://t.me/Meloset" 
           target="_blank" 
           rel="noopener noreferrer"
           className="bg-white text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-accent transition-all group"
@@ -69,10 +69,10 @@ export const Hero = () => (
 
     <div className="absolute left-12 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-6 text-white/70">
       <span className="text-[10px] uppercase tracking-[0.3em] vertical-text mb-4">Follow us</span>
-      <a href="https://instagram.com/nutripathet" target="_blank" rel="noopener noreferrer">
+      <a href="https://instagram.com/Meloset" target="_blank" rel="noopener noreferrer">
         <Instagram className="w-5 h-5 cursor-pointer hover:text-white transition-colors" />
       </a>
-      <a href="https://t.me/nutripathet" target="_blank" rel="noopener noreferrer">
+      <a href="https://t.me/Meloset" target="_blank" rel="noopener noreferrer">
         <Send className="w-5 h-5 cursor-pointer hover:text-white transition-colors" />
       </a>
     </div>

@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Nutripath | Bridging Nutrition & Clinical Medicine",
+  title: "Melos | Bridging Nutrition & Clinical Medicine",
   description: "Advanced clinical nutrition and personalized meal plans in Addis Ababa, Ethiopia.",
 };
 

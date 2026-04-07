@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,7 +10,7 @@ export const Testimonials = () => {
     {
       name: "Nebyat",
       role: "Personalized Meal Plan",
-      text: "I’ve started looking at the meal plan you made for me. Honestly, it’s amazing! Thank you so much for preparing it for me, I really appreciate your effort and knowledge. You are so talented, and I admire you. God bless you.",
+      text: "Iâ€™ve started looking at the meal plan you made for me. Honestly, itâ€™s amazing! Thank you so much for preparing it for me, I really appreciate your effort and knowledge. You are so talented, and I admire you. God bless you.",
       rating: 5
     },
     {
@@ -22,7 +22,7 @@ export const Testimonials = () => {
     {
       name: "Mahlet Bezabih",
       role: "Fat Loss and Habesha Foods",
-      text: "It includes both Habesha foods and a variety of other foods, which is really nice. It doesn’t just focus solely on injera and helped me lose weight effectively.",
+      text: "It includes both Habesha foods and a variety of other foods, which is really nice. It doesnâ€™t just focus solely on injera and helped me lose weight effectively.",
       rating: 5
     }
   ];
