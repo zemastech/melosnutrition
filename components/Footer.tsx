@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Instagram,
   Send,
@@ -105,8 +106,8 @@ export const Footer = () => (
 
       <div className="flex flex-col md:flex-row items-center justify-between mt-12 text-[10px] text-white/40 uppercase tracking-widest gap-4">
         <div className="flex gap-8">
-          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms &amp; Conditions</a>
+          <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-white transition-colors">Terms &amp; Conditions</Link>
         </div>
         <p>&copy; 2026 Melos. All Rights Reserved.</p>
         <div className="flex gap-4">
