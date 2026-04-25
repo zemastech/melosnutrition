@@ -22,7 +22,7 @@ export const Faq = () => {
             Common Questions
           </span>
           <h2 className="text-4xl md:text-5xl font-serif mb-6">
-            🟣 Frequently Asked Questions (FAQ)
+            Frequently Asked Questions (FAQ)
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Everything you need to know about our nutrition consultations and personalized meal plans.
@@ -44,7 +44,7 @@ export const Faq = () => {
                 className="w-full py-6 flex items-center justify-between text-left group"
               >
                 <span className="text-lg font-medium text-primary pr-8 group-hover:text-primary/80 transition-colors">
-                  ❓ {item.question}
+                  {item.question}
                 </span>
                 <span className="flex-shrink-0 w-8 h-8 rounded-full border border-accent flex items-center justify-center group-hover:border-primary transition-colors">
                   {openIndex === index ? (
