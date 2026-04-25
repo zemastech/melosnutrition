@@ -1,10 +1,9 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Scale } from "lucide-react";
 import Link from "next/link";
 import { servicePackages } from "@/data/services";
-
 import { Cta } from "./Cta";
 
 const fadeIn = {
@@ -13,16 +12,30 @@ const fadeIn = {
   viewport: { once: true, margin: "-100px" }
 };
 
+const KitchenScaleNote = () => (
+  <div className="mt-12 bg-accent rounded-[2rem] p-8 flex flex-col md:flex-row items-center gap-6">
+    <div className="shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+      <Scale className="w-6 h-6 text-white" />
+    </div>
+    <div>
+      <p className="font-bold text-lg mb-1">Kitchen Scale Required</p>
+      <p className="text-sm text-gray-600">
+        A kitchen scale is required to accurately follow all meal plans. For convenience, Melos also provides kitchen scales for clients who do not have one.
+      </p>
+    </div>
+  </div>
+);
+
 export const ServicePackages = () => (
   <section id="packages" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
-    <motion.div 
+    <motion.div
       {...fadeIn}
       transition={{ duration: 0.8 }}
       className="text-center mb-16"
     >
-      <span className="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 block">Our Service Packages</span>
+      <span className="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 block">Choose Your Nutrition Focus</span>
       <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-4">
-        Personalized nutrition plans <br /> <span className="text-primary italic">for every stage of life.</span>
+        Personalized nutrition plans <br /> <span className="text-primary italic">for every goal and stage of life.</span>
       </h2>
     </motion.div>
 
@@ -33,14 +46,14 @@ export const ServicePackages = () => (
           {...fadeIn}
           transition={{ duration: 0.5, delay: i * 0.1 }}
         >
-          <Link 
+          <Link
             href={`/services/${pkg.id}`}
             className="group bg-white rounded-[2.5rem] p-8 border border-accent/40 transition-all hover:shadow-md flex flex-col h-full"
           >
             <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8">
-              <img 
-                src={pkg.image} 
-                alt={pkg.title} 
+              <img
+                src={pkg.image}
+                alt={pkg.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
@@ -55,12 +68,12 @@ export const ServicePackages = () => (
       ))}
     </div>
 
-    <motion.div
-      {...fadeIn}
-      transition={{ duration: 0.8 }}
-    >
+    <motion.div {...fadeIn} transition={{ duration: 0.8 }}>
+      <KitchenScaleNote />
+    </motion.div>
+
+    <motion.div {...fadeIn} transition={{ duration: 0.8 }}>
       <Cta />
     </motion.div>
   </section>
 );
-

@@ -1,50 +1,50 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const servicesData = [
   {
-    icon: "🛠️",
+    label: "Overview",
     title: "Our Nutrition Services",
-    description: "At Melos, we provide personalized, home-based nutrition services designed to support both immediate goals and long-term health. Every service is grounded in nutrition science and adapted to individual needs, lifestyles, and locally available foods.",
+    description: "A Structured, Personalized Approach to Better Health. At Melos Nutritional Consultancy & Therapy, nutrition is approached as a structured system, not just a meal plan. Each service is designed to provide practical guidance, measurable progress, and long-term results using realistic, everyday foods.",
   },
   {
-    icon: "🔍",
+    label: "01",
     title: "Comprehensive Nutrition Assessment",
-    description: "We begin with a detailed assessment to understand the full picture of your health and lifestyle. This includes reviewing your dietary habits, daily routines, physical activity level, health history, and personal goals. During home visits, we take key measurements such as blood pressure, oxygen saturation, fasting blood sugar(FBS), body fat percentage, lean body weight, waist-to-hip ratio, and height. When necessary, clients are also advised to complete relevant laboratory blood tests to support accurate, safe, and personalized nutrition planning.",
+    description: "Every program begins with a detailed assessment to understand your full health profile. This includes evaluating your dietary habits, daily routine, physical activity level, medical history, and personal goals. During home visits, key measurements are taken, including blood pressure, oxygen saturation, fasting blood sugar (FBS), body fat percentage, lean body mass, waist-to-hip ratio, and height. When necessary, relevant laboratory tests are recommended to support accurate and safe nutrition planning.",
   },
   {
-    icon: "🍽️",
+    label: "02",
     title: "Personalized Meal Planning",
-    description: "Based on the assessment, we design fully customized meal plans in grams, tailored to your specific goal whether fat loss, weight gain, general wellness, disease management, pregnancy, or athletic performance. Meal plans are built using cost-effective, locally available foods. Plans can be flexible or structured, depending on your preference and lifestyle.",
+    description: "Based on your assessment, a fully customized meal plan is developed in grams, tailored to your specific goal—whether fat loss, weight gain, improved energy, overall health, or nutrition support for non-communicable conditions such as diabetes and hypertension. All plans are designed using affordable, locally available foods and can be structured or flexible depending on your lifestyle and preference.",
   },
   {
-    icon: "🛒",
+    label: "03",
     title: "Grocery Planning & Cooking Guidance",
-    description: "To make the plan practical and easy to follow, we provide a personalized grocery shopping list and clear cooking guidance. Clients receive support on food preparation methods, portion control, meal timing, and how to plan and use food efficiently throughout the week. For busy individuals, we also offer batch-cooking strategies to save time while maintaining nutritional quality.",
+    description: "To make your plan practical and easy to follow, you receive a personalized grocery list along with clear cooking guidance. This includes support with portion control, meal timing, food preparation methods, and efficient weekly meal planning. For busy individuals, batch-cooking strategies are also provided to help save time while maintaining nutritional quality.",
   },
   {
-    icon: "📊",
+    label: "04",
     title: "Follow-Up & Plan Adjustment",
-    description: "Nutrition is not static. We monitor progress, review feedback, and adjust meal plans as needed to ensure continued improvement and safety. This helps clients stay on track and achieve sustainable results.",
+    description: "Nutrition is not static. Progress is monitored through regular follow-ups, allowing adjustments to be made based on your results, feedback, and lifestyle changes. This ensures your plan remains effective, safe, and aligned with your goals over time.",
   },
   {
-    icon: "🧠",
+    label: "05",
     title: "Nutrition Education & Food Safety",
-    description: "Beyond meal plans, Melos places strong emphasis on education. Clients learn how nutrition affects long-term health, how to make better food choices independently, and how to practice proper food hygiene and safety at home to reduce the risk of food poisoning.",
+    description: "Melos places strong emphasis on education, helping you understand how nutrition affects your long-term health. Clients learn how to make informed food choices independently and how to apply proper food hygiene and safety practices at home.",
   },
   {
-    icon: "🩺",
+    label: "06",
     title: "Health-Focused Nutrition Considerations",
-    description: "At Melos, we consider individual health conditions and life stages when designing personalized meal plans. Nutrition guidance is adapted to support overall health, safety, and long-term well-being.",
+    description: "All nutrition plans are adapted based on individual health conditions, lifestyle, and life stage. Special consideration is given to:",
     bullets: [
-      "Blood sugar and blood pressure considerations",
-      "Pregnancy and lactation nutrition needs",
-      "Child growth and development needs",
-      "Over all nutrition through out the life cycle",
-      "Physical activity level and athletic demands"
+      "Blood sugar and blood pressure management",
+      "Pregnancy and lactation nutrition",
+      "Child growth and development",
+      "Full life-stage nutrition needs",
+      "Physical activity and athletic performance"
     ],
     footer: "All nutrition plans are non-medical, evidence-informed, and focused on supporting healthy eating habits, lifestyle improvement, and long-term disease prevention. Clients with medical conditions are encouraged to continue working with their healthcare providers alongside nutrition support."
   }
@@ -74,8 +74,8 @@ export const Services = () => {
           className="min-h-[400px] flex flex-col justify-center"
         >
           <div className="flex gap-2 mb-6">
-            <span className="px-3 py-1 bg-accent rounded-full text-lg font-bold tracking-wider">
-              {currentService.icon}
+            <span className="px-3 py-1 bg-accent rounded-full text-xs font-bold tracking-widest uppercase">
+              {currentService.label}
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold mb-8 leading-tight">
@@ -91,7 +91,7 @@ export const Services = () => {
               </ul>
             )}
             {currentService.footer && (
-              <p className="mt-4">{currentService.footer}</p>
+              <p className="mt-4 text-sm">{currentService.footer}</p>
             )}
           </div>
           <div className="flex gap-2 flex-wrap">
@@ -108,7 +108,7 @@ export const Services = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -116,29 +116,29 @@ export const Services = () => {
           className="relative"
         >
           <div className="aspect-square rounded-[2rem] overflow-hidden">
-            <img 
-              src="/hero-bg.jpg" 
-              alt="Lab Testing" 
+            <img
+              src="/hero-bg.jpg"
+              alt="Nutrition Consultation"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
           </div>
           <div className="absolute -right-8 -bottom-8 w-48 h-48 rounded-3xl overflow-hidden border-8 border-white hidden md:block">
-            <img 
-              src="/cta-bg.jpg" 
-              alt="Consultation" 
+            <img
+              src="/cta-bg.jpg"
+              alt="Meal Planning"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
           </div>
           <div className="absolute top-1/2 -right-4 -translate-y-1/2 flex flex-col gap-2">
-            <button 
+            <button
               onClick={prevSlide}
               className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <button 
+            <button
               onClick={nextSlide}
               className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
             >
@@ -150,4 +150,3 @@ export const Services = () => {
     </section>
   );
 };
-
