@@ -53,61 +53,81 @@ const servicesData = [
 export const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === servicesData.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? servicesData.length - 1 : prev - 1));
-  };
+  const nextSlide = () => setCurrentIndex((prev) => (prev === servicesData.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setCurrentIndex((prev) => (prev === 0 ? servicesData.length - 1 : prev - 1));
 
   const currentService = servicesData[currentIndex];
 
   return (
     <section id="services" className="py-24 px-6 bg-white rounded-[3rem] mx-4 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="min-h-[400px] flex flex-col justify-center"
-        >
-          <div className="flex gap-2 mb-6">
-            <span className="px-3 py-1 bg-accent rounded-full text-xs font-bold tracking-widest uppercase">
-              {currentService.label}
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-semibold mb-8 leading-tight">
-            {currentService.title}
-          </h2>
-          <div className="text-gray-500 mb-10 max-w-lg space-y-4">
-            <p>{currentService.description}</p>
-            {currentService.bullets && (
-              <ul className="list-disc pl-5 space-y-1">
-                {currentService.bullets.map((bullet, idx) => (
-                  <li key={idx}>{bullet}</li>
-                ))}
-              </ul>
-            )}
-            {currentService.footer && (
-              <p className="mt-4 text-sm">{currentService.footer}</p>
-            )}
-          </div>
-          <div className="flex gap-2 flex-wrap">
-            {servicesData.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-2 rounded-full transition-all ${
-                  idx === currentIndex ? "w-4 bg-primary" : "w-2 bg-accent hover:bg-primary/50"
-                }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-        </motion.div>
 
+        {/* Left column — outer wrapper is NOT animated so nav stays stable */}
+        <div className="min-h-[500px] flex flex-col">
+
+          {/* Only this block animates on slide change */}
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex-1"
+          >
+            <div className="flex gap-2 mb-6">
+              <span className="px-3 py-1 bg-accent rounded-full text-xs font-bold tracking-widest uppercase">
+                {currentService.label}
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-semibold mb-8 leading-tight">
+              {currentService.title}
+            </h2>
+            <div className="text-gray-500 max-w-lg space-y-4">
+              <p>{currentService.description}</p>
+              {currentService.bullets && (
+                <ul className="list-disc pl-5 space-y-1">
+                  {currentService.bullets.map((bullet, idx) => (
+                    <li key={idx}>{bullet}</li>
+                  ))}
+                </ul>
+              )}
+              {currentService.footer && (
+                <p className="mt-4 text-sm">{currentService.footer}</p>
+              )}
+            </div>
+          </motion.div>
+
+          {/* Dots + nav — outside the motion.div, never re-animates */}
+          <div className="flex flex-col gap-4 mt-10">
+            <div className="flex gap-2 flex-wrap">
+              {servicesData.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-2 rounded-full transition-all ${
+                    idx === currentIndex ? "w-4 bg-primary" : "w-2 bg-accent hover:bg-primary/50"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/80 transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/80 transition-colors"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Right column — image */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -131,21 +151,8 @@ export const Services = () => {
               referrerPolicy="no-referrer"
             />
           </div>
-          <div className="absolute top-1/2 -right-4 -translate-y-1/2 flex flex-col gap-2">
-            <button
-              onClick={prevSlide}
-              className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
         </motion.div>
+
       </div>
     </section>
   );

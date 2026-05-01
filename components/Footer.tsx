@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,8 +13,105 @@ import {
   Clock,
   ArrowUpRight,
   MessageCircle,
+  Loader2,
 } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
+
+type FormState = { name: string; phone: string; message: string };
+type Status = "idle" | "loading" | "success" | "error";
+
+const ContactForm = () => {
+  const [form, setForm] = useState<FormState>({ name: "", phone: "", message: "" });
+  const [status, setStatus] = useState<Status>("idle");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("success");
+      setForm({ name: "", phone: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <div className="bg-white/10 rounded-[1.5rem] px-6 py-8 text-center">
+        <p className="font-bold text-white text-lg mb-1">Message sent!</p>
+        <p className="text-white/60 text-sm">We&apos;ll be in touch soon.</p>
+        <button
+          onClick={() => setStatus("idle")}
+          className="mt-4 text-xs text-white/40 underline hover:text-white/70 transition-colors"
+        >
+          Send another
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <input
+        type="text"
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+        placeholder="Your name"
+        required
+        className="w-full bg-white/10 rounded-full px-6 py-4 border border-white/20 focus:outline-none focus:border-white transition-colors text-white placeholder:text-white/40 text-sm"
+      />
+      <input
+        type="tel"
+        name="phone"
+        value={form.phone}
+        onChange={handleChange}
+        placeholder="Phone number"
+        required
+        className="w-full bg-white/10 rounded-full px-6 py-4 border border-white/20 focus:outline-none focus:border-white transition-colors text-white placeholder:text-white/40 text-sm"
+      />
+      <div className="relative">
+        <textarea
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          placeholder="Your message"
+          required
+          rows={3}
+          className="w-full bg-white/10 rounded-[1.5rem] px-6 py-4 border border-white/20 focus:outline-none focus:border-white transition-colors text-white placeholder:text-white/40 text-sm resize-none"
+        />
+      </div>
+      {status === "error" && (
+        <p className="text-red-300 text-xs px-2">Something went wrong. Please try again.</p>
+      )}
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="w-full flex items-center justify-center gap-2 bg-white text-primary font-bold py-4 rounded-full hover:bg-secondary transition-colors disabled:opacity-60"
+      >
+        {status === "loading" ? (
+          <>
+            <Loader2 className="w-4 h-4 animate-spin" /> Sending...
+          </>
+        ) : (
+          <>
+            Send Message <ArrowUpRight className="w-4 h-4" />
+          </>
+        )}
+      </button>
+    </form>
+  );
+};
 
 export const Footer = () => (
   <footer id="contact" className="bg-primary text-white pt-32 pb-12 px-6 overflow-hidden rounded-t-[100px]">
@@ -26,20 +124,11 @@ export const Footer = () => (
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-20">
         <div>
-          <h2 className="text-4xl font-semibold mb-8 text-white">Get In Touch</h2>
-          <p className="text-white/60 mb-8 max-w-sm">
-            Booking your plan is simple. Reach out via your preferred platform to secure your spot.
+          <h2 className="text-4xl font-semibold mb-4 text-white">Get In Touch</h2>
+          <p className="text-white/60 mb-8 max-w-sm text-sm">
+            Reach out to book your consultation or ask any questions.
           </p>
-          <div className="relative max-w-md">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="w-full bg-white/10 rounded-full px-6 py-4 border border-white/20 focus:outline-none focus:border-white transition-colors text-white placeholder:text-white/40"
-            />
-            <button className="absolute right-2 top-2 bottom-2 w-12 h-12 bg-white text-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
-              <ArrowUpRight className="w-5 h-5" />
-            </button>
-          </div>
+          <ContactForm />
         </div>
 
         <div className="flex flex-col space-y-6">
@@ -57,12 +146,28 @@ export const Footer = () => (
               <Send className="w-5 h-5 text-white/60 shrink-0" />
               <div className="flex flex-col">
                 <p className="text-[10px] text-white/40 uppercase tracking-widest leading-none mb-1">Telegram</p>
-                <p className="text-sm text-white/80">{CONTACT.telegramHandle}</p>
+                <a
+                  href={CONTACT.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/80 hover:text-white transition-colors underline underline-offset-2"
+                >
+                  {CONTACT.telegramHandle}
+                </a>
               </div>
             </div>
             <div className="flex gap-4 items-center">
               <MapPin className="w-5 h-5 text-white/60 shrink-0" />
               <p className="text-sm text-white/80">Addis Ababa, Ethiopia</p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <Clock className="w-5 h-5 text-white/60 shrink-0" />
+              <div className="text-sm text-white/80">
+                <p className="font-bold text-white mb-1">Office Hours</p>
+                <p>Mon &ndash; Fri: 8:30 AM &ndash; 6:30 PM</p>
+                <p>Sat: 9:00 AM &ndash; 2:00 PM</p>
+                <p>Sun: Closed</p>
+              </div>
             </div>
           </div>
         </div>
@@ -82,7 +187,14 @@ export const Footer = () => (
           </div>
           <div className="space-y-2">
             <p className="text-xs text-white/40 uppercase tracking-widest font-bold">Instagram</p>
-            <p className="text-sm text-white/80">{CONTACT.instagramHandle}</p>
+            <a
+              href={CONTACT.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/80 hover:text-white transition-colors underline underline-offset-2"
+            >
+              {CONTACT.instagramHandle}
+            </a>
           </div>
         </div>
       </div>
