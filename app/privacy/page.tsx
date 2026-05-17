@@ -27,7 +27,7 @@ export default function PrivacyPage() {
         <section className="bg-secondary p-8 rounded-[2rem] border border-accent">
           <h2 className="text-2xl font-serif text-primary mb-4 italic">2. Data Sharing & Security</h2>
           <p className="font-medium text-primary/80">
-            Your privacy is our priority. All data collected about the client—including all physical and health measurements—is strictly confidential.
+            Your privacy is our priority. All data collected about the client,including all physical and health measurements,is strictly confidential.
           </p>
           <p className="mt-4">
             <strong>We do not share your data</strong> with third parties for marketing, clinical research, or any other purposes without your explicit, written consent. Your measurements and personalized plans are used exclusively for your own progress monitoring and plan adjustments within Melos.

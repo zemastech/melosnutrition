@@ -27,7 +27,7 @@ const KitchenScaleNote = () => (
 );
 
 export const ServicePackages = () => (
-  <section id="packages" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+  <section id="packages" className="py-24 max-w-7xl mx-auto overflow-hidden px-6">
     <motion.div
       {...fadeIn}
       transition={{ duration: 0.8 }}
@@ -39,10 +39,11 @@ export const ServicePackages = () => (
       </h2>
     </motion.div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible">
       {servicePackages.map((pkg, i) => (
         <motion.div
           key={pkg.id}
+          className="shrink-0 w-[80vw] sm:w-[60vw] md:w-auto snap-start"
           {...fadeIn}
           transition={{ duration: 0.5, delay: i * 0.1 }}
         >

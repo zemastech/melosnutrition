@@ -18,7 +18,7 @@ const servicesData = [
   {
     label: "02",
     title: "Personalized Meal Planning",
-    description: "Based on your assessment, a fully customized meal plan is developed in grams, tailored to your specific goal—whether fat loss, weight gain, improved energy, overall health, or nutrition support for non-communicable conditions such as diabetes and hypertension. All plans are designed using affordable, locally available foods and can be structured or flexible depending on your lifestyle and preference.",
+    description: "Based on your assessment, a fully customized meal plan is developed in grams, tailored to your specific goal: fat loss, weight gain, improved energy, overall health, or nutrition support for non-communicable conditions such as diabetes and hypertension. All plans are designed using affordable, locally available foods and can be structured or flexible depending on your lifestyle and preference.",
   },
   {
     label: "03",
@@ -59,10 +59,10 @@ export const Services = () => {
   const currentService = servicesData[currentIndex];
 
   return (
-    <section id="services" className="py-24 px-6 bg-white rounded-[3rem] mx-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="services" className="py-24 bg-white rounded-[3rem] mx-4 overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-6">
 
-        {/* Left column — outer wrapper is NOT animated so nav stays stable */}
+        {/* Left column - outer wrapper is NOT animated so nav stays stable */}
         <div className="min-h-[500px] flex flex-col">
 
           {/* Only this block animates on slide change */}
@@ -96,7 +96,7 @@ export const Services = () => {
             </div>
           </motion.div>
 
-          {/* Dots + nav — outside the motion.div, never re-animates */}
+          {/* Dots + nav - outside the motion.div, never re-animates */}
           <div className="flex flex-col gap-4 mt-10">
             <div className="flex gap-2 flex-wrap">
               {servicesData.map((_, idx) => (
@@ -127,7 +127,7 @@ export const Services = () => {
           </div>
         </div>
 
-        {/* Right column — image */}
+        {/* Right column - image */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}

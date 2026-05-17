@@ -11,10 +11,10 @@ const fadeIn = {
 };
 
 export const Booking = () => (
-  <section className="py-24 px-4 overflow-hidden">
-    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4">
+  <section className="py-24 overflow-hidden">
+    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 px-6">
 
-      {/* Left card — nutrition image */}
+      {/* Left card - nutrition image */}
       <motion.div
         {...fadeIn}
         transition={{ duration: 0.8 }}
@@ -37,7 +37,7 @@ export const Booking = () => (
         </div>
       </motion.div>
 
-      {/* Right card — CTA with bg image + overlay */}
+      {/* Right card - CTA with bg image + overlay */}
       <motion.div
         {...fadeIn}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -55,7 +55,7 @@ export const Booking = () => (
           <span className="px-4 py-1 border border-white/30 rounded-full text-[10px] uppercase mb-8 inline-block w-fit">Limited Availability</span>
           <h2 className="text-4xl md:text-5xl font-semibold mb-6 leading-tight">Book Your Personalized Nutrition Plan</h2>
           <p className="opacity-70 mb-6 max-w-md text-sm leading-relaxed">
-            Every program includes meal planning, grocery guidance, cooking support, nutrition education, and ongoing follow-up—all delivered through home-based consultation in Addis Ababa.
+            Every program includes meal planning, grocery guidance, cooking support, nutrition education, and ongoing follow-up. All delivered through home-based consultation in Addis Ababa.
           </p>
           <p className="opacity-60 mb-10 text-sm max-w-md">
             Only a limited number of clients are accepted each week to ensure quality and personalized attention.

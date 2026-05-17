@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/HP/.claude/projects/c--Users-HP-Desktop-projects-nutripath/memory/**)"
+    ]
+  }
+}

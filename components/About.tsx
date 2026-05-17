@@ -9,7 +9,7 @@ const fadeIn = {
 };
 
 export const About = () => (
-  <section id="about" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+  <section id="about" className="py-24 max-w-7xl mx-auto overflow-hidden px-6">
     <motion.div {...fadeIn} transition={{ duration: 0.8 }} className="mb-16">
       <span className="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 block">About Melos</span>
       <h2 className="text-3xl md:text-5xl font-semibold leading-tight max-w-3xl">
@@ -18,7 +18,7 @@ export const About = () => (
     </motion.div>
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-      {/* Left — founding story + approach */}
+      {/* Left - founding story + approach */}
       <div className="space-y-6">
         <motion.p {...fadeIn} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 leading-relaxed">
           Melos Nutritional Consultancy &amp; Therapy was founded by Kirubel, a Food Science and Nutrition professional based in Addis Ababa. The goal of Melos is to provide practical, evidence-informed nutrition that works in real life.
@@ -35,7 +35,7 @@ export const About = () => (
         </motion.div>
       </div>
 
-      {/* Right — delivery + outcomes */}
+      {/* Right - delivery + outcomes */}
       <div className="space-y-6">
         <motion.p {...fadeIn} transition={{ duration: 0.6, delay: 0.3 }} className="text-gray-600 leading-relaxed">
           All plans are designed using affordable, locally available foods, making them realistic and sustainable for daily life. Through home-based consultations, clients receive hands-on guidance, including meal planning in grams, grocery planning, and practical cooking support.

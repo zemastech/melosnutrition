@@ -10,7 +10,7 @@ const fadeIn = {
 };
 
 export const TestCatalog = () => (
-  <section id="assessment" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+  <section id="assessment" className="py-24 max-w-7xl mx-auto overflow-hidden px-6">
     <motion.h2
       {...fadeIn}
       transition={{ duration: 0.8 }}
@@ -85,7 +85,7 @@ export const TestCatalog = () => (
           </div>
           <div>
             <h3 className="text-2xl font-bold">Laboratory Tests When Needed</h3>
-            <p className="text-gray-500 mt-1">When necessary, relevant laboratory tests are recommended to support accurate and safe nutrition planning—especially for clients with existing health conditions.</p>
+            <p className="text-gray-500 mt-1">When necessary, relevant laboratory tests are recommended to support accurate and safe nutrition planning, especially for clients with existing health conditions.</p>
           </div>
         </div>
       </motion.div>

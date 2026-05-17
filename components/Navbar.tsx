@@ -49,6 +49,7 @@ export const Navbar = () => {
           <Link href="/#about" className="hover:text-primary transition-colors">About</Link>
           <Link href="/#services" className="hover:text-primary transition-colors">Services</Link>
           <Link href="/#packages" className="hover:text-primary transition-colors">Packages</Link>
+          <Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link>
           <Link href="/#contact" className="hover:text-primary transition-colors">Contact</Link>
         </div>
 
@@ -91,14 +92,21 @@ export const Navbar = () => {
         <div className="w-full h-px bg-gray-100 mb-12" />
 
         <div className="flex flex-col gap-6 mb-12">
-          {['Home', 'About', 'Services', 'Packages', 'Contact'].map((item) => (
+          {[
+            { label: 'Home', href: '/' },
+            { label: 'About', href: '/#about' },
+            { label: 'Services', href: '/#services' },
+            { label: 'Packages', href: '/#packages' },
+            { label: 'FAQ', href: '/faq' },
+            { label: 'Contact', href: '/#contact' },
+          ].map((item) => (
             <Link
-              key={item}
-              href={item === 'Home' ? '/' : `/#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-4xl font-semibold text-black hover:text-primary transition-colors tracking-tight"
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </div>

@@ -31,7 +31,7 @@ export default function TermsPage() {
             <strong>IMPORTANT:</strong> The services provided by Melos are not a substitute for professional medical advice, diagnosis, or treatment. 
           </p>
           <p className="mt-4">
-            All measurements taken during our sessions—including but not limited to body composition, blood pressure, and fasting blood sugar (FBS)—are used solely for the purpose of <strong>knowing the person</strong> and tailoring a personalized nutrition plan. 
+            All measurements taken during our sessions,including but not limited to body composition, blood pressure, and fasting blood sugar (FBS),are used solely for the purpose of <strong>knowing the person</strong> and tailoring a personalized nutrition plan. 
           </p>
           <p className="mt-4">
             These measurements and the resulting plans are <strong>not medical decisions</strong> and should not be treated as such. We do not provide clinical diagnoses. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.

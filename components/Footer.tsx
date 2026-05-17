@@ -1,21 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Instagram,
   Send,
   MapPin,
   Phone,
   Mail,
-  Clock,
   ArrowUpRight,
   MessageCircle,
   Loader2,
 } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
+
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
 
 type FormState = { name: string; phone: string; message: string };
 type Status = "idle" | "loading" | "success" | "error";
@@ -28,7 +34,7 @@ const ContactForm = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
     try {
@@ -114,13 +120,13 @@ const ContactForm = () => {
 };
 
 export const Footer = () => (
-  <footer id="contact" className="bg-primary text-white pt-32 pb-12 px-6 overflow-hidden rounded-t-[100px]">
+  <footer id="contact" className="bg-primary text-white pt-32 pb-12 overflow-hidden rounded-t-[100px]">
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="max-w-7xl mx-auto"
+      className="max-w-7xl mx-auto px-6"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-20">
         <div>
@@ -136,11 +142,15 @@ export const Footer = () => (
           <div className="space-y-6">
             <div className="flex gap-4 items-center">
               <Phone className="w-5 h-5 text-white/60 shrink-0" />
-              <p className="text-sm text-white/80">{CONTACT.phone}</p>
+              <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-sm text-white/80 hover:text-white transition-colors">
+                {CONTACT.phone}
+              </a>
             </div>
             <div className="flex gap-4 items-center">
               <Mail className="w-5 h-5 text-white/60 shrink-0" />
-              <p className="text-sm text-white/80">{CONTACT.email}</p>
+              <a href={CONTACT.emailHref} className="text-sm text-white/80 hover:text-white transition-colors">
+                {CONTACT.email}
+              </a>
             </div>
             <div className="flex gap-4 items-center">
               <Send className="w-5 h-5 text-white/60 shrink-0" />
@@ -160,15 +170,6 @@ export const Footer = () => (
               <MapPin className="w-5 h-5 text-white/60 shrink-0" />
               <p className="text-sm text-white/80">Addis Ababa, Ethiopia</p>
             </div>
-            <div className="flex gap-4 items-center">
-              <Clock className="w-5 h-5 text-white/60 shrink-0" />
-              <div className="text-sm text-white/80">
-                <p className="font-bold text-white mb-1">Office Hours</p>
-                <p>Mon &ndash; Fri: 8:30 AM &ndash; 6:30 PM</p>
-                <p>Sat: 9:00 AM &ndash; 2:00 PM</p>
-                <p>Sun: Closed</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -176,7 +177,7 @@ export const Footer = () => (
           <h3 className="text-xl font-semibold text-white mb-2">Follow Us</h3>
           <div className="flex gap-6">
             <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <Instagram className="w-5 h-5 text-white" />
+              <InstagramIcon />
             </a>
             <a href={CONTACT.telegram} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
               <Send className="w-5 h-5 text-white" />
@@ -223,7 +224,7 @@ export const Footer = () => (
         </div>
         <p>&copy; 2026 Melos. All Rights Reserved.</p>
         <div className="flex gap-4">
-          <Instagram className="w-4 h-4" />
+          <InstagramIcon />
           <Send className="w-4 h-4" />
           <MessageCircle className="w-4 h-4" />
         </div>

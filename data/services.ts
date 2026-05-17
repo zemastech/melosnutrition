@@ -5,7 +5,7 @@ export const servicePackages: ServicePackage[] = [
     id: "fat-loss-weight-gain",
     title: "Fat Loss / Weight Gain",
     shortDesc: "A structured plan designed to help you reach a healthy body weight in a sustainable way, focusing on accurate portions, balanced meals, and long-term habits.",
-    fullDesc: "This program takes a structured, evidence-informed approach to body weight—whether your goal is fat loss or healthy weight gain. Plans are built in grams using locally available foods, with an emphasis on portion accuracy, meal balance, and habits that last beyond the program.",
+    fullDesc: "This program takes a structured, evidence-informed approach to body weight,whether your goal is fat loss or healthy weight gain. Plans are built in grams using locally available foods, with an emphasis on portion accuracy, meal balance, and habits that last beyond the program.",
     whoItIsFor: "Individuals looking to lose body fat, gain lean mass, or achieve a healthier body weight in a safe and sustainable way.",
     included: [
       "Personalized meal plan (in grams)",
@@ -22,7 +22,7 @@ export const servicePackages: ServicePackage[] = [
     id: "clean-eating-health",
     title: "Clean Eating & Overall Health",
     shortDesc: "Focused on improving daily energy, overall wellness, and long-term health through balanced, whole-food nutrition.",
-    fullDesc: "This plan prioritizes daily energy, general well-being, and long-term health improvement. Using whole, locally available foods, meals are structured around balance and quality rather than restriction—building habits that support your body over time.",
+    fullDesc: "This plan prioritizes daily energy, general well-being, and long-term health improvement. Using whole, locally available foods, meals are structured around balance and quality rather than restriction,building habits that support your body over time.",
     whoItIsFor: "Anyone wanting to improve their energy levels, overall wellness, and adopt healthier eating habits for the long term.",
     included: [
       "Balanced meal plan (in grams)",
@@ -56,7 +56,7 @@ export const servicePackages: ServicePackage[] = [
     id: "diabetes-blood-pressure",
     title: "Diabetes & Blood Pressure Support",
     shortDesc: "A balanced nutrition approach designed to support stable eating patterns and overall health alongside medical care.",
-    fullDesc: "This plan provides structured nutritional support for individuals managing blood sugar or blood pressure. Meals are designed to promote consistency, balance, and healthy eating patterns—always as a complement to, not a replacement for, medical care.",
+    fullDesc: "This plan provides structured nutritional support for individuals managing blood sugar or blood pressure. Meals are designed to promote consistency, balance, and healthy eating patterns,always as a complement to, not a replacement for, medical care.",
     whoItIsFor: "Individuals with diabetes, hypertension, or those at risk who want to support their health through structured nutrition.",
     included: [
       "Structured meal plan with portion control",
@@ -90,7 +90,7 @@ export const servicePackages: ServicePackage[] = [
     id: "busy-lifestyle",
     title: "Busy Lifestyle",
     shortDesc: "A simple, time-efficient plan for individuals with limited time, making healthy eating practical and realistic.",
-    fullDesc: "Healthy eating should not require hours in the kitchen. This plan is built for people with demanding schedules—prioritizing simple meals, smart preparation strategies, and a flexible structure that fits around a busy life.",
+    fullDesc: "Healthy eating should not require hours in the kitchen. This plan is built for people with demanding schedules,prioritizing simple meals, smart preparation strategies, and a flexible structure that fits around a busy life.",
     whoItIsFor: "Professionals, parents, and anyone with a demanding schedule who struggles to find time for consistent healthy eating.",
     included: [
       "Easy-to-follow meal plan",
