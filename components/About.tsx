@@ -9,7 +9,7 @@ const fadeIn = {
 };
 
 export const About = () => (
-  <section id="about" className="py-24 max-w-7xl mx-auto overflow-hidden px-6">
+  <section id="about" className="py-12 sm:py-24 max-w-7xl mx-auto overflow-hidden px-6">
     <motion.div {...fadeIn} transition={{ duration: 0.8 }} className="mb-16">
       <span className="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 block">About Melos</span>
       <h2 className="text-3xl md:text-5xl font-semibold leading-tight max-w-3xl">

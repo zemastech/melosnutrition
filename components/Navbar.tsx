@@ -54,7 +54,7 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className={`hidden sm:flex ${isHome && !isScrolled ? "bg-white text-black" : "bg-black text-white"} px-5 py-2 rounded-full text-sm font-medium items-center gap-2 hover:bg-primary hover:text-white transition-all`}>
+          <a href={CONTACT.phoneHref} className={`hidden sm:flex ${isHome && !isScrolled ? "bg-white text-black" : "bg-black text-white"} px-5 py-2 rounded-full text-sm font-medium items-center gap-2 hover:bg-primary hover:text-white transition-all`}>
             Book Now <ArrowUpRight className="w-4 h-4" />
           </a>
 
@@ -115,9 +115,7 @@ export const Navbar = () => {
 
         <div className="flex flex-col gap-8">
           <a
-            href={CONTACT.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={CONTACT.phoneHref}
             className="text-left text-xl font-medium text-black flex items-center gap-2 hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >

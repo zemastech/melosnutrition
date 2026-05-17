@@ -11,7 +11,7 @@ const fadeIn = {
 };
 
 export const Booking = () => (
-  <section className="py-24 overflow-hidden">
+  <section className="py-12 sm:py-24 overflow-hidden">
     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 px-6">
 
       {/* Left card - nutrition image */}
@@ -26,7 +26,7 @@ export const Booking = () => (
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
         <div className="absolute top-8 left-8 glass-card px-4 py-2 rounded-full text-white text-xs font-bold flex items-center gap-2">
           <div className="flex -space-x-2">
             {[1,2,3].map(i => (
@@ -53,7 +53,7 @@ export const Booking = () => (
 
         <div className="relative z-10 text-white flex flex-col justify-center h-full">
           <span className="px-4 py-1 border border-white/30 rounded-full text-[10px] uppercase mb-8 inline-block w-fit">Limited Availability</span>
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6 leading-tight">Book Your Personalized Nutrition Plan</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6 leading-tight !text-white">Book Your Personalized Nutrition Plan</h2>
           <p className="opacity-70 mb-6 max-w-md text-sm leading-relaxed">
             Every program includes meal planning, grocery guidance, cooking support, nutrition education, and ongoing follow-up. All delivered through home-based consultation in Addis Ababa.
           </p>
@@ -65,15 +65,15 @@ export const Booking = () => (
               href={CONTACT.telegram}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-accent transition-all group"
+              className="bg-white text-black px-5 py-3 sm:px-8 sm:py-4 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-accent transition-all group"
             >
-              Message on Telegram <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              Message on Telegram <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
             <a
               href={CONTACT.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/40 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all"
+              className="border border-white/40 text-white px-5 py-3 sm:px-8 sm:py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-all"
             >
               WhatsApp
             </a>

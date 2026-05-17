@@ -52,16 +52,14 @@ export const Hero = () => (
         </div>
         <div className="flex flex-wrap gap-2 sm:gap-3">
           <a
-            href={CONTACT.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-black px-4 py-2.5 sm:px-6 sm:py-4 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-accent transition-all group"
+            href={CONTACT.phoneHref}
+            className="bg-white text-black px-3 py-2 sm:px-6 sm:py-4 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 hover:bg-accent transition-all group"
           >
             Book Your Consultation <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </a>
           <a
             href="#packages"
-            className="border border-white/40 text-white px-4 py-2.5 sm:px-6 sm:py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-all"
+            className="border border-white/40 text-white px-3 py-2 sm:px-6 sm:py-4 rounded-full text-xs sm:text-sm font-bold hover:bg-white/10 transition-all"
           >
             View Programs
           </a>

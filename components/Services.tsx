@@ -59,7 +59,7 @@ export const Services = () => {
   const currentService = servicesData[currentIndex];
 
   return (
-    <section id="services" className="py-24 bg-white rounded-[3rem] mx-4 overflow-hidden">
+    <section id="services" className="py-12 sm:py-24 bg-white rounded-[3rem] mx-4 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-6">
 
         {/* Left column - outer wrapper is NOT animated so nav stays stable */}

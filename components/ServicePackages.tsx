@@ -27,7 +27,7 @@ const KitchenScaleNote = () => (
 );
 
 export const ServicePackages = () => (
-  <section id="packages" className="py-24 max-w-7xl mx-auto overflow-hidden px-6">
+  <section id="packages" className="py-12 sm:py-24 max-w-7xl mx-auto overflow-hidden px-6">
     <motion.div
       {...fadeIn}
       transition={{ duration: 0.8 }}

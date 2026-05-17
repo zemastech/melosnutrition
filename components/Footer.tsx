@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type SyntheticEvent } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,7 +34,7 @@ const ContactForm = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
     try {
@@ -120,7 +120,7 @@ const ContactForm = () => {
 };
 
 export const Footer = () => (
-  <footer id="contact" className="bg-primary text-white pt-32 pb-12 overflow-hidden rounded-t-[100px]">
+  <footer id="contact" className="bg-[#162922] text-white pt-32 pb-12 overflow-hidden rounded-t-[100px] sm:rounded-t-[130px]">
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}

@@ -10,7 +10,7 @@ const fadeIn = {
 };
 
 export const TestCatalog = () => (
-  <section id="assessment" className="py-24 max-w-7xl mx-auto overflow-hidden px-6">
+  <section id="assessment" className="py-12 sm:py-24 max-w-7xl mx-auto overflow-hidden px-6">
     <motion.h2
       {...fadeIn}
       transition={{ duration: 0.8 }}

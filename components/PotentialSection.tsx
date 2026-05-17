@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 export const PotentialSection = () => (
-  <section className="py-32 bg-white overflow-hidden px-6">
+  <section className="py-14 sm:py-32 bg-white overflow-hidden px-6">
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}

@@ -32,7 +32,7 @@ export const Testimonials = () => {
   const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-24 max-w-7xl mx-auto overflow-hidden px-6">
+    <section className="py-12 sm:py-24 max-w-7xl mx-auto overflow-hidden px-6">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
